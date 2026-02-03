@@ -8,10 +8,12 @@ html, body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url("/assets/img/background.png");
+
+  /* Background PNG simple, pas de filtre pour l'instant */
+  background-image: url("/assets/img/background.png");
   background-size: cover;
   background-position: center;
-  filter: blur(18px) brightness(0.6);
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -22,8 +24,8 @@ html, body {
   align-items: center;
   text-align: center;
   padding: 60px 20px;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
 h1 {
