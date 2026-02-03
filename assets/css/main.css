@@ -1,23 +1,42 @@
-html, body {
-  height: 100%;
+/* RESET */
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* IMAGE DE FOND SIMPLE */
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* supprime la barre de scroll */
+}
+
+/* BACKGROUND + OVERLAY LUXE + ZOOM ANIMÉ */
 .background {
   position: fixed;
   inset: 0;
-  z-index: -2; /* derrière tout */
+  z-index: -2;
   background: url("/assets/img/background.png") center/cover no-repeat;
+
+  /* Animation zoom subtil */
+  animation: background-zoom 30s ease-in-out infinite alternate;
 }
 
-/* OVERLAY SOMBRE */
 .background-overlay {
   position: fixed;
   inset: 0;
-  z-index: -1; /* juste au-dessus du PNG */
+  z-index: -1;
   background: rgba(0,0,0,0.6); /* voile sombre */
+}
+
+/* ANIMATION ZOOM */
+@keyframes background-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 /* CONTENU */
@@ -33,7 +52,7 @@ html, body {
   z-index: 1;
 }
 
-/* TITRE ET SOUS-TITRE : ne rien toucher aux tailles */
+/* TITRE PRINCIPAL (ne pas toucher la taille) */
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -42,6 +61,7 @@ h1 {
   color: #ffffff;
 }
 
+/* SOUS-TITRE (ne pas toucher la taille) */
 .subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
